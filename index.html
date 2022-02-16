@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>My ToDo List</h1>
+  </header>
+
+  <main>
+    <div class="input"><textarea id="inputText" placeholder="Type here"></textarea><button
+        onclick="input()">Add</button></div>
+    <div id="toDos">
+      <div id="list">
+        <div id="single">
+          <div class="options">
+            <span id="cross">x</span>
+            <span id="color">c</span>
+            <span id="edit">+</span>
+          </div>
+          <p id="demoText">Dmon note text.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <footer>
+
+  </footer>
+  <script src="todo.js"></script>
+</body>
+
+</html>
