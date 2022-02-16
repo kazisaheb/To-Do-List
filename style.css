@@ -5,8 +5,9 @@ body{
 }
 header{
   height: 50px;
-  background-color: aqua;
+  background-color: rgb(0, 0, 0);
   text-align: center;
+  color: #fff;
 }
 header h1{
   margin-top: 0;
@@ -28,10 +29,11 @@ header h1{
 
 #single{
   max-width: 300px;
-  background-color: aqua;
   margin: 5px;
   padding: 5px;
   display: none;
+  border: 1px solid gray;  
+  border-radius: 5px;
 }
 
 #cross,#color,#edit{
@@ -40,8 +42,8 @@ header h1{
   border-radius: 20px;
   margin: 0 5px;
   cursor: pointer;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 #cross{background-color: red;}
-#color{background-color: purple;}
+#color{background-image: linear-gradient(red,blue);}
 #edit{background-color: green;}
