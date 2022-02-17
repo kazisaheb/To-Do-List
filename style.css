@@ -26,7 +26,6 @@ header h1{
   flex-wrap: wrap;
   justify-content: center;
 }
-
 #single{
   max-width: 300px;
   margin: 5px;
@@ -35,7 +34,6 @@ header h1{
   border: 1px solid gray;  
   border-radius: 5px;
 }
-
 #cross,#color,#edit,#save{
   padding: 0px 7px;
   color: white;
@@ -44,7 +42,9 @@ header h1{
   cursor: pointer;
   border: 2px solid white;
 }
-#cross{background-color: red;}
-#color{background-image: linear-gradient(red,blue);}
-#edit{background-color: green;}
-#save{background-color: rgb(0, 108, 248);}
+#cross{
+  background-color: red;
+}
+#color{
+  background-image: linear-gradient(red,blue);
+}

@@ -13,6 +13,7 @@ function input() {
     demoText.innerText = inputText.value;
     inputText.value = '';
     single.style.display = 'block';
+    localStorage.setItem('div', toDos);// Testing
   }
 }
 
@@ -24,29 +25,8 @@ function color(event) {
   bg.style.color = 'white';
 }
 
-/* // Edit button
-let editBtn = document.getElementById('edit');
-let saveBtn = document.getElementById('save');
-function edit(event) {
-  let newText = event.target.parentNode.parentNode.childNodes[3];
-  newText.innerText = 'Test texts';
-  let newInput = document.createElement("TEXTAREA");
-  newText.append(newInput);
-  editBtn.style.display = 'none';
-  saveBtn.style.display = 'block';
-  return newInput;
-}
-
-// Save edited
-function save(event) {
-  let newwText = event.target.parentNode.parentNode.childNodes[3];
-  console.log(newwText);
-
-  demoText.innerText = newwText.value;
-
-} */
-
 // Remove item
 function Close(event) {
   event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
+  localStorage.removeItem('listDiv'); //Testing
 }
