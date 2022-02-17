@@ -16,19 +16,35 @@ function input() {
   }
 }
 
-// Edit button
-function edit(event) {
-  event.target.parentNode.parentNode.parentNode.demoText(event.target.parentNode.parentNode).innerText = 'Edited successfully!!'
-
-  // demoText.innerText = 'Edited successfully!!'
-}
-
-// List bg change
-function color() {
+// color button
+function color(event) {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  single.style.backgroundColor = "#" + randomColor;
-  single.style.color = 'white';
+  let bg = event.target.parentNode.parentNode;
+  bg.style.backgroundColor = "#" + randomColor;
+  bg.style.color = 'white';
 }
+
+/* // Edit button
+let editBtn = document.getElementById('edit');
+let saveBtn = document.getElementById('save');
+function edit(event) {
+  let newText = event.target.parentNode.parentNode.childNodes[3];
+  newText.innerText = 'Test texts';
+  let newInput = document.createElement("TEXTAREA");
+  newText.append(newInput);
+  editBtn.style.display = 'none';
+  saveBtn.style.display = 'block';
+  return newInput;
+}
+
+// Save edited
+function save(event) {
+  let newwText = event.target.parentNode.parentNode.childNodes[3];
+  console.log(newwText);
+
+  demoText.innerText = newwText.value;
+
+} */
 
 // Remove item
 function Close(event) {
