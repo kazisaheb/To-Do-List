@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDo List</title>
+  <link rel="shortcut icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3he_ZE0OIVE9RXz-5fAzi7cChgmrzdFn4Bw&usqp=CAU"
+    type="image/x-icon">
+  <title>Kazi's To Do List</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,23 +16,13 @@
   <header>
     <h1>My ToDo List</h1>
   </header>
-  <main>
+  <button onclick="clearAll()">Clear All</button>
+  <main id="main">
     <div class="input"><textarea id="inputText" placeholder="Type here"></textarea><button
         onclick="input()">Add</button></div>
     <div id="toDos">
-      <div id="list">
-        <div id="single">
-          <div class="options">
-            <span onclick="Close(event)" id="cross">Close</span>
-            <span onclick="color(event)" id="color">Color</span>
-          </div>
-          <p id="demoText">Dmon note text.</p>
-        </div>
-      </div>
     </div>
   </main>
-  <footer>
-  </footer>
   <script src="todo.js"></script>
 </body>
 

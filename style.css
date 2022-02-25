@@ -30,7 +30,6 @@ header h1{
   max-width: 300px;
   margin: 5px;
   padding: 5px;
-  display: none;
   border: 1px solid gray;  
   border-radius: 5px;
 }
