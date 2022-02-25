@@ -29,6 +29,7 @@ function color(event) {
   let bg = event.target.parentNode.parentNode;
   bg.style.backgroundColor = "#" + randomColor;
   bg.style.color = 'white';
+  localStorage.setItem('field', JSON.stringify(toDos.innerHTML));
 }
 // Remove item
 function Close(event) {
