@@ -33,7 +33,7 @@ header h1{
   border: 1px solid gray;  
   border-radius: 5px;
 }
-#cross,#color,#edit,#save{
+#cross,#color,#editBtn,#saveBtn{
   padding: 0px 7px;
   color: white;
   border-radius: 20px;
@@ -44,6 +44,17 @@ header h1{
 #cross{
   background-color: red;
 }
+#editBtn{
+  background-color: green;
+}
+#saveBtn{
+  display: none;
+  background-color: green;
+}
 #color{
   background-image: linear-gradient(red,blue);
+}
+.newText{
+  width: 97%;
+  height: 300px;
 }

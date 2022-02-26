@@ -11,7 +11,9 @@ input = () => {
     listDiv.innerHTML = `   
     <div id="single">
       <div class="options">
-        <span onclick="Close(event)" id="cross">Close</span>
+        <span onclick="xxxx(event)" id="cross">Remove</span>
+        <span onclick="edit(event)" id="editBtn" class="editBtn">Edit</span>
+        <span onclick="saveBtnFunction()" id="saveBtn">Save</span>
         <span onclick="color(event)" id="color">Color</span>
       </div>
       <p id="demoText">${inputText.value}</p>
@@ -32,7 +34,7 @@ function color(event) {
   localStorage.setItem('field', JSON.stringify(toDos.innerHTML));
 }
 // Remove item
-function Close(event) {
+function xxxx(event) {
   event.target.parentNode.parentNode.parentNode.remove();
   localStorage.setItem('field', JSON.stringify(toDos.innerHTML));
 }
@@ -40,4 +42,25 @@ function Close(event) {
 clearAll = () => {
   localStorage.clear()
   toDos.innerHTML = ''
-} 
+}
+// Edit Button finction
+edit = (event) => {
+  let theNote = event.target.parentNode.parentNode.childNodes[3];
+  let newText = document.createElement('textarea')
+  newText.classList.add('newText')
+  newText.value = theNote.innerText
+  theNote.innerText = ''
+  theNote.append(newText)
+  newText.focus()
+  event.target.style.display = 'none'
+  let saveBtn = event.target.nextElementSibling
+  saveBtn.style.display = 'block'
+  // Save button finction
+  saveBtnFunction = () => {
+    theNote.innerText = newText.value
+    newText.style.display = 'none'
+    saveBtn.style.display = 'none'
+    event.target.style.display = 'block'
+    localStorage.setItem('field', JSON.stringify(toDos.innerHTML))
+  }
+}
