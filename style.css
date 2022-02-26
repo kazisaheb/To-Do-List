@@ -24,6 +24,7 @@ header h1{
 #toDos{
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   justify-content: center;
 }
 #single{
@@ -45,7 +46,7 @@ header h1{
   background-color: red;
 }
 #editBtn{
-  background-color: green;
+  background-color: blue;
 }
 #saveBtn{
   display: none;
