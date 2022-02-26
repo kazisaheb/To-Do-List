@@ -13,7 +13,7 @@ input = () => {
       <div class="options">
         <span onclick="xxxx(event)" id="cross">Remove</span>
         <span onclick="edit(event)" id="editBtn" class="editBtn">Edit</span>
-        <span onclick="saveBtnFunction()" id="saveBtn">Save</span>
+        <span onclick="save()" id="saveBtn">Save</span>
         <span onclick="color(event)" id="color">Color</span>
       </div>
       <p id="demoText">${inputText.value}</p>
@@ -56,7 +56,7 @@ edit = (event) => {
   let saveBtn = event.target.nextElementSibling
   saveBtn.style.display = 'block'
   // Save button finction
-  saveBtnFunction = () => {
+  save = () => {
     theNote.innerText = newText.value
     newText.style.display = 'none'
     saveBtn.style.display = 'none'
