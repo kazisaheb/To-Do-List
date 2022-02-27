@@ -11,7 +11,7 @@ input = () => {
     listDiv.innerHTML = `   
     <div id="single">
       <div class="options">
-        <span onclick="xxxx(event)" id="cross">Remov</span>
+        <span onclick="xxxx(event)" id="cross">Remove</span>
         <span onclick="edit(event)" id="editBtn" class="editBtn">Edit</span>
         <span onclick="save()" id="saveBtn">Save</span>
         <span onclick="color(event)" id="color">Color</span>
