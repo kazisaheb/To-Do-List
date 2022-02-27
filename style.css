@@ -61,6 +61,7 @@ main{
 .newText{
   width: 97%;
   max-width: 295px;
+  min-width: 197px;
   height: 300px;
   background-color: white;
   font-size: 16px;
@@ -70,4 +71,12 @@ footer,a{
   background-color: black;
   text-align: center;
   color: white;
+  padding: 1px 0;
 }
+
+#dates{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 10px;
+  font-style: italic;
+  }

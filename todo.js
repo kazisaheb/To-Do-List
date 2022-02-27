@@ -17,6 +17,7 @@ input = () => {
         <span onclick="color(event)" id="color">Color</span>
       </div>
       <p id="demoText">${inputText.value}</p>
+      <span id="dates">${new Date().toDateString()}</span>    
     </div>
     `
     toDos.append(listDiv);
