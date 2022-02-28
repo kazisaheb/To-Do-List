@@ -80,5 +80,6 @@ footer,a{
   font-size: 12px;
   font-style: italic;
   border-top: 1px solid;
+  margin-top: -10px;
   margin-bottom: -4px;
   }
