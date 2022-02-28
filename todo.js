@@ -2,7 +2,7 @@ let toDos = document.getElementById('toDos')
 let list = document.getElementById('list')
 let demoText = document.getElementById('demoText')
 let inputText = document.getElementById('inputText')
-let single = document.getElementById('single')
+// let single = document.getElementById('single')
 // Append
 input = () => {
   if (inputText.value != '') {
@@ -11,7 +11,7 @@ input = () => {
     listDiv.innerHTML = `   
     <div id="single">
       <div class="options">
-        <span onclick="remove(event)" id="cross">Remove</span>
+        <span onclick="cross(event)" id="cross">X</span>
         <span onclick="edit(event)" id="editBtn" class="editBtn">Edit</span>
         <span onclick="save()" id="saveBtn">Save</span>
         <span onclick="color(event)" id="color">Color</span>
@@ -34,11 +34,6 @@ function color(event) {
   let bg = event.target.parentNode.parentNode
   bg.style.backgroundColor = "#" + randomColor
   bg.style.color = 'white'
-  store()
-}
-// Remove item
-function remove(event) {
-  event.target.parentNode.parentNode.parentNode.remove()
   store()
 }
 // Clear All
@@ -64,6 +59,31 @@ edit = (event) => {
     newText.style.display = 'none'
     saveBtn.style.display = 'none'
     event.target.style.display = 'block'
+    store()
+  }
+}
+// Remove item with modal confirmation
+function cross(event) {
+  let myModal = document.getElementById('myModal')
+  let modal = document.createElement('div')
+  modal.innerHTML = `
+  <div class="modal">
+      <div class="modal-content">
+        <p>Permanently remove this note?</p>
+        <span id="rcBtns">
+        <button onclick="removeBtn()"  id="removeBtn">Remove</button>
+        <button onclick="cancleBtn()" id="cancleBtn">Cancle</button>
+        </span>
+      </div>
+    </div>
+  `
+  myModal.append(modal)
+  cancleBtn = () => {
+    modal.style.display = 'none'
+  }
+  removeBtn = () => {
+    event.target.parentNode.parentNode.parentNode.remove()
+    modal.style.display = 'none'
     store()
   }
 }
