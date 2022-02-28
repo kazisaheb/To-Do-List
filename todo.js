@@ -36,11 +36,6 @@ function color(event) {
   bg.style.color = 'white'
   store()
 }
-// Clear All
-clearAll = () => {
-  localStorage.clear()
-  toDos.innerHTML = ''
-}
 // Edit Button finction
 edit = (event) => {
   let theNote = event.target.parentNode.parentNode.childNodes[3]
@@ -68,14 +63,14 @@ function cross(event) {
   let modal = document.createElement('div')
   modal.innerHTML = `
   <div class="modal">
-      <div class="modal-content">
-        <p>Permanently remove this note?</p>
-        <span id="rcBtns">
-        <button onclick="removeBtn()"  id="removeBtn">Remove</button>
-        <button onclick="cancleBtn()" id="cancleBtn">Cancle</button>
-        </span>
-      </div>
+    <div class="modal-content">
+    <p>Confirm Remove Permanently?</p>
+    <span id="rcBtns">
+    <button onclick="removeBtn()"  id="removeBtn">Remove</button>
+    <button onclick="cancleBtn()" id="cancleBtn">Cancle</button>
+    </span>
     </div>
+  </div>
   `
   myModal.append(modal)
   cancleBtn = () => {
@@ -85,5 +80,16 @@ function cross(event) {
     event.target.parentNode.parentNode.parentNode.remove()
     modal.style.display = 'none'
     store()
+  }
+  return modal
+}
+// Clear All
+clearAll = () => {
+  if (toDos.innerHTML != '')
+    cross()
+  removeBtn = () => {
+    localStorage.clear()
+    toDos.innerHTML = ''
+    cancleBtn()
   }
 }
