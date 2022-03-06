@@ -2,7 +2,7 @@ let toDos = document.getElementById('toDos')
 let list = document.getElementById('list')
 let demoText = document.getElementById('demoText')
 let inputText = document.getElementById('inputText')
-// let single = document.getElementById('single')
+
 // Append
 input = () => {
   if (inputText.value != '') {
@@ -26,8 +26,8 @@ input = () => {
   }
 }
 // LocalStorage function
-store = () => localStorage.setItem('field', JSON.stringify(toDos.innerHTML))
-toDos.innerHTML = JSON.parse(localStorage.getItem('field'))
+store = () => localStorage.setItem('todoField', JSON.stringify(toDos.innerHTML))
+toDos.innerHTML = JSON.parse(localStorage.getItem('todoField'))
 // Color button
 function color(event) {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16)
@@ -39,8 +39,9 @@ function color(event) {
 // Edit Button finction
 edit = (event) => {
   let theNote = event.target.parentNode.parentNode.childNodes[3]
+  event.target.parentNode.parentNode.parentNode.classList.add('modal')
   let newText = document.createElement('textarea')
-  newText.classList.add('newText')
+  newText.classList.add('newText',)
   newText.value = theNote.innerText
   theNote.innerText = ''
   theNote.append(newText)
@@ -54,6 +55,7 @@ edit = (event) => {
     newText.style.display = 'none'
     saveBtn.style.display = 'none'
     event.target.style.display = 'block'
+    event.target.parentNode.parentNode.parentNode.classList.remove('modal')
     store()
   }
 }
@@ -88,7 +90,7 @@ clearAll = () => {
   if (toDos.innerHTML != '')
     cross()
   removeBtn = () => {
-    localStorage.clear()
+    localStorage.removeItem('todoField')
     toDos.innerHTML = ''
     cancleBtn()
   }

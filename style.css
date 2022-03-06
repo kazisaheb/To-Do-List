@@ -1,10 +1,9 @@
-/** @format */
-
 body {
 	background-color: beige;
 	margin: 0 auto;
 	font-family: system-ui;
 }
+
 header {
 	height: 50px;
 	background-color: rgb(0, 0, 0);
@@ -31,10 +30,11 @@ main {
 	flex-wrap: wrap;
 	flex-direction: row-reverse;
 	justify-content: center;
+	column-gap: 10px;
 }
 #single {
 	max-width: 300px;
-	margin: 5px;
+	margin: 5px auto;
 	padding: 5px;
 	border: 1px solid gray;
 	border-radius: 5px;
