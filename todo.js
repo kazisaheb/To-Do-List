@@ -49,6 +49,9 @@ edit = (event) => {
   event.target.style.display = 'none'
   let saveBtn = event.target.nextElementSibling
   saveBtn.style.display = 'block'
+
+  event.target.previousElementSibling.style.display = 'none'
+
   // Save button finction
   save = () => {
     theNote.innerText = newText.value
@@ -56,6 +59,9 @@ edit = (event) => {
     saveBtn.style.display = 'none'
     event.target.style.display = 'block'
     event.target.parentNode.parentNode.parentNode.classList.remove('modal')
+
+    event.target.previousElementSibling.style.display = 'block'
+
     store()
   }
 }
