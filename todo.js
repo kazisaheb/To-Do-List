@@ -16,6 +16,12 @@ input = () => {
         <span onclick="save()" id="saveBtn">Save</span>
         <span onclick="color(event)" id="color">Color</span>
       </div>
+      <div class="toolbar">
+  <button onclick="document.execCommand('bold')">B</button>
+  <button onclick="document.execCommand('italic')">I</button>
+  <button onclick="document.execCommand('insertUnorderedList')">UL</button>
+</div>
+
       <p id="demoText">${inputText.value}</p>
       <span id="dates">${new Date().toDateString()}, ${new Date().toLocaleTimeString()}</span>    
     </div>
